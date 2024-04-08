@@ -9,7 +9,7 @@ Features
 *   ✅ Autocomplete HTML & CSS
 *   ✅ Code highlight for HTML & CSS & JS
 *   ✅ Instant live reload as you save code
-*   ✅ Kept code in Browser's Local Storage
+*   ✅ Keep code in Browser's Local Storage
 
 Features that can be added
 
