@@ -21,4 +21,4 @@ Features that can be added
 
 Clone repo
 
-run command `npm run dev`
+run command `npm install` & `npm run dev`
