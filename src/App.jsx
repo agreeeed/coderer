@@ -1,6 +1,7 @@
 import { useCallback, useState } from 'react'
 import CodeMirror from '@uiw/react-codemirror';
 import { html } from '@codemirror/lang-html';
+import { css } from '@codemirror/lang-css';
 import { bespin } from '@uiw/codemirror-theme-bespin';
 import './App.css'
 
@@ -29,7 +30,7 @@ function App() {
   const storedCode = localStorage.getItem('coderecode');
   const storedFontSize = localStorage.getItem('coderefs');
 
-  const [fontSize, setFontSize] = useState(parseInt(storedFontSize) ?? 16);
+  const [fontSize, setFontSize] = useState(parseInt(storedFontSize));
   const [code, setCode] = useState(storedCode ?? defHTML);
   const [savedNotf, setSavedNotf] = useState(false);
   const [savedCode, setSavedCode] = useState(code);
@@ -60,7 +61,7 @@ function App() {
             type="number"
             min="8"
             max="40"
-            value={fontSize}
+            value={fontSize || 16}
             onChange={(e) => {
               setFontSize(parseInt(e.target.value));
               localStorage.setItem('coderefs', parseInt(e.target.value));
@@ -71,19 +72,19 @@ function App() {
           <span style={{ display: savedNotf ? 'inline-block' : 'none' }}>Saved</span>
         </div>
         <div>
-          <p><a href="https://github.com/agreeeed/coderer">Github</a></p>
+          <p><a href="https://github.com/mgbdevp/coderer">Github</a></p>
         </div>
       </div>
 
       <div className="flex">
         <CodeMirror
-          style={{ fontSize: fontSize }}
+          style={{ fontSize: fontSize || 16 }}
           value={code}
           height="calc(100vh - 48px)"
           width="62vw"
           autoFocus={true}
           theme={bespin}
-          extensions={[html()]}
+          extensions={[html(), css()]}
           onChange={onChange}
           onKeyDown={handleKP}
         />
