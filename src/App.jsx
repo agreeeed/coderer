@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import CodeMirror from '@uiw/react-codemirror';
 import { html } from '@codemirror/lang-html';
 import { css } from '@codemirror/lang-css';
-import { bespin } from '@uiw/codemirror-theme-bespin';
+import { dracula } from '@uiw/codemirror-theme-dracula';
 import './App.css'
 
 const defHTML = `<!DOCTYPE html>
@@ -21,7 +21,7 @@ const defHTML = `<!DOCTYPE html>
   </body>
 </html>
 <!--
-  Editor as Codemirror And Bespin theme
+  Editor as Codemirror And Dracula theme
   Build With React ⚛
   The code is kept in Browser's Local Storage
 -->`
@@ -61,7 +61,7 @@ function App() {
             type="number"
             min="8"
             max="40"
-            value={fontSize || 16}
+            value={fontSize || 14}
             onChange={(e) => {
               setFontSize(parseInt(e.target.value));
               localStorage.setItem('coderefs', parseInt(e.target.value));
@@ -78,12 +78,12 @@ function App() {
 
       <div className="flex">
         <CodeMirror
-          style={{ fontSize: fontSize || 16 }}
+          style={{ fontSize: fontSize || 14 }}
           value={code}
           height="calc(100vh - 48px)"
           width="62vw"
           autoFocus={true}
-          theme={bespin}
+          theme={dracula}
           extensions={[html(), css()]}
           onChange={onChange}
           onKeyDown={handleKP}

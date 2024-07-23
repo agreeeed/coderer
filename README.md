@@ -5,7 +5,7 @@
 Features
 
 *   ✅ Using React Codemirror as editor
-*   ✅ Bespin Code Theme
+*   ✅ Dracula Code Theme
 *   ✅ Autocomplete HTML & CSS
 *   ✅ Code highlight for HTML & CSS & JS
 *   ✅ Instant live reload as you save code
