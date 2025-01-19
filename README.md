@@ -8,7 +8,7 @@ Features
 
 *   ✅ Using React Codemirror as editor
 *   ✅ Dracula Code Theme
-*   ✅ Autocomplete HTML & CSS
+*   ✅ Autocomplete HTML & CSS & JS
 *   ✅ Code highlight for HTML & CSS & JS
 *   ✅ Instant live reload as you save code
 *   ✅ Keep code in Browser's Local Storage
